@@ -69,7 +69,7 @@ export default function ChatInterface({
               <div
                 className={`max-w-[80%] rounded-lg p-4 ${
                   message.role === 'user'
-                    ? 'bg-gradient-to-r from-[#FF61DC] to-[#FF61DC]/80 backdrop-blur-sm'
+                    ? 'bg-gradient-to-r from-[var(--color-blur)] to-[var(--color-accent)]/80 backdrop-blur-sm'
                     : 'bg-white/10 backdrop-blur-sm border border-white/10'
                 }`}
               >
@@ -117,7 +117,7 @@ export default function ChatInterface({
           <div ref={messagesEndRef} />
         </div>
 
-        <form onSubmit={handleSubmit} className="p-4 border-t border-white/10 bg-[#1A1037]/80 backdrop-blur-sm">
+        <form onSubmit={handleSubmit} className="p-4 border-t border-white/10 bg-[var(--color-secondary)]/80 backdrop-blur-sm">
           <div className="flex gap-2">
             <input
               type="text"
@@ -125,14 +125,14 @@ export default function ChatInterface({
               onChange={(e) => setInput(e.target.value)}
               placeholder={inputPlaceholder}
               className="flex-1 bg-white/10 text-white rounded-lg px-4 py-2 
-                       focus:outline-none focus:ring-2 focus:ring-[#FF61DC]/50
+                       focus:outline-none focus:ring-2 focus:ring-[var(--color-blur)]/50
                        placeholder-white/50 backdrop-blur-sm"
               disabled={isLoading}
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="bg-gradient-to-r from-[#FF61DC] to-[#00DAF7] px-6 py-2 rounded-lg font-semibold
+              className="bg-gradient-to-r from-[var(--color-blur)] to-[var(--color-accent)] px-6 py-2 rounded-lg font-semibold
                        hover:opacity-90 transition-opacity duration-200
                        disabled:opacity-50 backdrop-blur-sm"
             >

@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  /* Ana renkler */
-  --color-primary: #2D1869;
-  --color-secondary: #1A1037;
-  --color-accent: #FF61DC;
-  --color-blur: #08DAF7;
+  /* Ana renkler - Görseldeki mavi ve turuncu tonlarına uygun */
+  --color-primary: #1B3B5A;  /* Koyu mavi */
+  --color-secondary: #0A1A2F; /* Daha koyu mavi */
+  --color-accent: #FF8E3C;   /* Turuncu */
+  --color-blur: #00C2FF;     /* Parlak mavi */
   
   /* Gradient renkler */
-  --gradient-start: rgba(45, 24, 105, 0.3);
-  --gradient-end: rgba(26, 16, 55, 0.5);
+  --gradient-start: rgba(27, 59, 90, 0.3);  /* Koyu mavi */
+  --gradient-end: rgba(10, 26, 47, 0.6);    /* Daha koyu mavi */
   
   /* Efekt renkleri */
-  --pulse-color: #FF61DC;
-  --glow-color: #08DAF7;
+  --pulse-color: #FF8E3C;    /* Turuncu parıltı */
+  --glow-color: #00C2FF;     /* Mavi parıltı */
 }
 
 /* Kullanımı */
@@ -37,7 +37,7 @@ body {
 
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-blur)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[var(--color-blur)] to-[var(--color-accent)] bg-clip-text text-transparent;
   }
 
   .bg-gradient-overlay {

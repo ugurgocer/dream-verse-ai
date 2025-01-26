@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Image as Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/dream-hero.webp"
+          src="/main-cover.jpeg"
           alt="Dream Analysis Illustration"
           fill
           priority
@@ -23,12 +23,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-overlay"></div>
       </div>
 
-      {/* Floating Elements - Gradient üzerindeki efektler */}
+      {/* Floating Elements */}
       <div className="absolute inset-0 z-20">
-        <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-[#FF61DC] rounded-full 
-                       blur-[128px] opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-1/3 -right-1/4 w-96 h-96 bg-[#00DAF7] rounded-full 
-                       blur-[128px] opacity-20 animate-pulse delay-700"></div>
+        <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-[var(--color-accent)] rounded-full 
+                     blur-[128px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-1/3 -right-1/4 w-96 h-96 bg-[var(--color-blur)] rounded-full 
+                     blur-[128px] opacity-20 animate-pulse delay-700"></div>
       </div>
 
       {/* Content - En üstteki katman */}
@@ -37,8 +37,7 @@ export default function Home() {
         <div className="container mx-auto px-4 mt-12 flex flex-col items-center">
           {/* Slogan */}
           <div className="text-center mb-12">
-            <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-[#FF61DC] to-[#00DAF7] 
-                           bg-clip-text text-transparent leading-tight">
+            <h1 className="text-6xl font-bold mb-6 gradient-text leading-tight">
               Rüyalarını Anlat,<br />
               Anlamını Keşfet
             </h1>
@@ -49,9 +48,9 @@ export default function Home() {
             {/* CTA Button */}
             <Link 
               href="/dream-chat" 
-              className="bg-gradient-to-r from-[#FF61DC] to-[#00DAF7] px-8 py-4 rounded-lg 
+              className="bg-gradient-to-r from-[var(--color-blur)] to-[var(--color-accent)] px-8 py-4 rounded-lg 
                        text-lg font-semibold hover:opacity-90 transition-opacity duration-200 
-                       shadow-lg shadow-[#FF61DC]/20 inline-block backdrop-blur-sm"
+                       shadow-lg shadow-[var(--color-blur)]/20 inline-block backdrop-blur-sm"
             >
               Rüyanı Yorumlat
             </Link>
