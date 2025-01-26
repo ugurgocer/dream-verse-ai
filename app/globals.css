@@ -3,19 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Ana renkler */
+  --color-primary: #2D1869;
+  --color-secondary: #1A1037;
+  --color-accent: #FF61DC;
+  --color-blur: #08DAF7;
+  
+  /* Gradient renkler */
+  --gradient-start: rgba(45, 24, 105, 0.3);
+  --gradient-end: rgba(26, 16, 55, 0.5);
+  
+  /* Efekt renkleri */
+  --pulse-color: #FF61DC;
+  --glow-color: #08DAF7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Kullanımı */
+.absolute.inset-0 {
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+}
+
+.animate-pulse {
+  background-color: var(--pulse-color);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-blur)] bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      var(--gradient-start) 0%,
+      transparent 35%,
+      var(--gradient-end) 100%
+    );
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      var(--color-secondary) 100%
+    );
+    opacity: 0.3;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

@@ -1,3 +1,5 @@
+const { colors } = require('./app/constants/theme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,27 +9,37 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      colors: {
+        primary: colors.primary,
+        theme: {
+          primary: colors.background.primary,
+          secondary: colors.background.secondary,
+        }
+      },
       typography: {
         DEFAULT: {
           css: {
-            color: 'white',
+            color: colors.text.primary,
             a: {
-              color: '#d8b4fe',
+              color: colors.primary.main,
               '&:hover': {
-                color: '#e9d5ff',
+                color: colors.primary.light,
               },
             },
             strong: {
-              color: 'white',
+              color: colors.text.primary,
             },
             h1: {
-              color: 'white',
+              color: colors.text.primary,
             },
             h2: {
-              color: 'white',
+              color: colors.text.primary,
             },
             h3: {
-              color: 'white',
+              color: colors.text.primary,
             },
           },
         },
